@@ -1,26 +1,17 @@
 {
   "name": "mycloud_p",
   "version": "1.0.0",
-  "description": "<img width=\"1312\" height=\"750\" alt=\"image\" src=\"https://github.com/user-attachments/assets/17ab8bc8-9bc3-44d8-8f44-bc5906ed7347\" />\r 想加群的自己点击添加吧 tg交流群 https://t.me/+ft-zI76oovgwNmRh",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "wrangler dev",
+    "build:bundle": "esbuild src/worker.js --bundle --format=esm --platform=neutral --outfile=dist/worker.bundle.js --minify",
+    "build:obf": "node scripts/obfuscate.cjs",
+    "build": "npm run build:bundle && npm run build:obf",
+    "deploy": "npm run build && wrangler publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/whispin/mycloud_p.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/whispin/mycloud_p/issues"
-  },
-  "homepage": "https://github.com/whispin/mycloud_p#readme",
   "devDependencies": {
-    "esbuild": "^0.25.10",
-    "javascript-obfuscator": "^4.1.1",
-    "wrangler": "^4.40.2"
+    "esbuild": "^0.23.0",
+    "javascript-obfuscator": "^4.1.0",
+    "wrangler": "^3.0.0"
   }
 }
