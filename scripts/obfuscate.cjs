@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const obfuscator = require('javascript-obfuscator');
 
-const srcPath = path.resolve(__dirname, '../dist/worker.bundle.js'); // esbuild 输出
+const srcPath = path.resolve(__dirname, '../src/worker.js'); // esbuild 输出
 const outPath = path.resolve(__dirname, '../dist/worker.js');
 
 const code = fs.readFileSync(srcPath, 'utf8');
