@@ -1,7 +1,7 @@
 import { connect } from 'cloudflare:sockets';
 
-let authToken = '351c9981-04b6-4103-aa4b-864aa9c91469';
-let fallbackAddress = 'bpb.yousef.isegaro.com';
+let authToken = '327ca319-64b8-403b-8ff4-3cc8c9829b2a';
+let fallbackAddress = 'ProxyIP.cmliussss.net';
 let fallbackPort = '443';
 let socks5Config = '';
 
@@ -92,7 +92,7 @@ export default {
             else if (request.method === 'GET') {
                 // 根路径返回部署成功页面
                 if (url.pathname === '/') {
-                    const successHtml = `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>部署成功</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background-color:#121212;color:#e0e0e0;text-align:center;}.container{padding:2rem;border-radius:8px;background-color:#1e1e1e;box-shadow:0 4px 6px rgba(0,0,0,0.1);}h1{color:#4caf50;}</style></head><body><div class="container"><h1>✅ 部署成功</h1><p>代理与动态订阅功能均已启用。</p></div></body></html>`;
+                    const successHtml = `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>yes</title><body><h1>✅ we are ready</h1></body></html>`;
                     return new Response(successHtml, { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
                 }
                 // 处理订阅请求
@@ -157,7 +157,7 @@ function generateLinksFromSource(list, uuid, workerDomain) {
     // 支持的HTTPS端口列表
     const httpsPorts = [443,8443];
     const links = [];
-    const wsPath = encodeURIComponent('/?ed=2048');
+    const wsPath = encodeURIComponent('/game?id=1');
     // 分割协议名称以避免直接出现敏感词
     const proto = 'v' + 'l' + 'e' + 's' + 's';
 
