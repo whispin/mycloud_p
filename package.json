@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
-    "build:bundle": "esbuild src/worker.js --bundle --format=esm --platform=neutral --outfile=dist/worker.bundle.js --minify",
+    "build:bundle": "esbuild src/worker.js --bundle --format=esm --platform=neutral --outfile=dist/worker.bundle.js --minify --external:cloudflare:sockets",
     "build:obf": "node scripts/obfuscate.cjs",
     "build": "npm run build:bundle && npm run build:obf",
     "deploy": "npm run build && wrangler publish"
